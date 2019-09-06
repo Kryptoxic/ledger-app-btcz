@@ -55,11 +55,6 @@ else ifeq ($(COIN),bitcoin_cash)
 DEFINES   += COIN_P2PKH_VERSION=0 COIN_P2SH_VERSION=5 COIN_FAMILY=1 COIN_COINID=\"Bitcoin\" COIN_COINID_HEADER=\"BITCOINCASH\" COIN_COLOR_HDR=0x85bb65 COIN_COLOR_DB=0xc2ddb2 COIN_COINID_NAME=\"BitcoinCash\" COIN_COINID_SHORT=\"BCH\" COIN_KIND=COIN_KIND_BITCOIN_CASH COIN_FORKID=0
 APPNAME ="Bitcoin Cash"
 APP_LOAD_PARAMS += --path $(APP_PATH)
-else ifeq ($(COIN),bitcoinz)
-# BitcoinZ
-DEFINES   += COIN_P2PKH_VERSION=0 COIN_P2SH_VERSION=5 COIN_FAMILY=1 COIN_COINID=\"Bitcoin\" COIN_COINID_HEADER=\"BITCOINZ\" COIN_COLOR_HDR=0x85bb65 COIN_COLOR_DB=0xc2ddb2 COIN_COINID_NAME=\"BitcoinZ\" COIN_COINID_SHORT=\"BTCZ\" COIN_KIND=COIN_KIND_BITCOINZ COIN_FORKID=0
-APPNAME ="BitcoinZ"
-APP_LOAD_PARAMS += --path $(APP_PATH)
 else ifeq ($(COIN),bitcoin_gold)
 # Bitcoin Gold
 DEFINES   += COIN_P2PKH_VERSION=38 COIN_P2SH_VERSION=23 COIN_FAMILY=1 COIN_COINID=\"Bitcoin\\x20Gold\" COIN_COINID_HEADER=\"BITCOINGOLD\" COIN_COLOR_HDR=0x85bb65 COIN_COLOR_DB=0xc2ddb2 COIN_COINID_NAME=\"BitcoinGold\" COIN_COINID_SHORT=\"BTG\" COIN_KIND=COIN_KIND_BITCOIN_GOLD COIN_FLAGS=FLAG_SEGWIT_CHANGE_SUPPORT COIN_FORKID=79
@@ -163,9 +158,14 @@ else ifeq ($(COIN),nix)
 DEFINES   += COIN_P2PKH_VERSION=38 COIN_P2SH_VERSION=53 COIN_FAMILY=1 COIN_COINID=\"NIX\" COIN_COINID_HEADER=\"NIX\" COIN_COLOR_HDR=0x1685e8 COIN_COLOR_DB=0xffffff COIN_COINID_NAME=\"NIX\" COIN_COINID_SHORT=\"NIX\" COIN_NATIVE_SEGWIT_PREFIX=\"nix\" COIN_KIND=COIN_KIND_NIX COIN_FLAGS=FLAG_SEGWIT_CHANGE_SUPPORT
 APPNAME ="NIX"
 APP_LOAD_PARAMS += --path $(APP_PATH)
+else ifeq ($(COIN),bitcoinz)
+# BitcoinZ
+DEFINES   += COIN_P2PKH_VERSION=7352 COIN_P2SH_VERSION=7357 COIN_FAMILY=1 COIN_COINID=\"BitcoinZ\" COIN_COINID_HEADER=\"BITCOINZ\" COIN_COLOR_HDR=0x85bb65 COIN_COLOR_DB=0xc2ddb2 COIN_COINID_NAME=\"BitcoinZ\" COIN_COINID_SHORT=\"BTCZ\" COIN_KIND=COIN_KIND_BITCOINZ COIN_FORKID=0
+APPNAME ="BitcoinZ"
+APP_LOAD_PARAMS += --path $(APP_PATH)
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, horizen, komodo, stratis, peercoin, pivx, viacoin, vertcoin, stealth, digibyte, qtum, bitcoin_private, zcoin, gamecredits, zclassic, xsn, nix bitcoinz)
+$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, horizen, komodo, stratis, peercoin, pivx, viacoin, vertcoin, stealth, digibyte, qtum, bitcoin_private, zcoin, gamecredits, zclassic, xsn, nix, bitcoinz)
 endif
 endif
 

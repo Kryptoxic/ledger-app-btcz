@@ -185,6 +185,7 @@ $(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_g
 endif
 endif
 
+TARGET_NAME = TARGET_NANOS
 APP_LOAD_PARAMS += $(APP_LOAD_FLAGS)
 DEFINES += $(DEFINES_LIB)
 
